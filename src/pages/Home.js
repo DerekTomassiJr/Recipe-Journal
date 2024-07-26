@@ -55,7 +55,7 @@ function Home() {
 
               <div className='remember-forgot'>
                 <label><input type='checkbox' />Remember me</label>
-                <a href='#'>Forgot password?</a>
+                <a href='https://nimble-gelato-2915a7.netlify.app/'>Forgot password?</a>
               </div>
 
               <div className='button-group'>
