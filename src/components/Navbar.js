@@ -9,13 +9,13 @@ export default function Navbar() {
   const path = window.location.pathname;
   return ( 
   <nav className="nav">
-      <Link to="/" className="site-title"><img id="site_logo" src={ journalLogo } /></Link>
+      <Link to="/" className="site-title"><img id="site_logo" src={ journalLogo } alt="Site_Logo"/></Link>
       <ul>
-          <CustomLink to="/profile"><img id="profile_picture" src={ profilePicture } />Profile</CustomLink>
+          <CustomLink to="/profile"><img id="profile_picture" src={ profilePicture } alt="Profile_Picture"/>Profile</CustomLink>
           <CustomLink to="/recipes">Recipes</CustomLink>
           <CustomLink to="/finder">Finder</CustomLink>
           <CustomLink to="/ingredients">Ingredients</CustomLink>
-          <CustomLink to="/settings"><img id="settings_icon" src={ settingsIcon } /></CustomLink>
+          <CustomLink to="/settings"><img id="settings_icon" src={ settingsIcon } alt="Settings_Icon" /></CustomLink>
       </ul>
   </nav>
   )
