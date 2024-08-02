@@ -1,42 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import '../styles/Navbar.css';
-import ReorderIcon from '@mui/icons-material/Reorder';
-import CloseIcon from '@mui/icons-material/Close';
-import { useRef } from 'react';
+import journalLogo from "../assets/JournalLogo.png";
+import settingsIcon from "../assets/settings_icon.png";
+import profilePicture from "../assets/profile_picture.JPG";
 
-
-function Navbar() {
-  const navRef = useRef();
-
-  //whenever the reorder icon is clicked shows the navbar animation
-  const showNavbar = () => {
-    navRef.current.classList.toggle("animation");
-  }
-
-  //added function so whenever link is clicked it closes animation
-  const closeNavbar = () => {
-    navRef.current.classList.remove("animation");
-  }
-
-  /*standard nav setup where header acts as container*/
-  return (
-    <header>
-      <h3><a href='/'>LOGO</a></h3>
-      <nav ref={navRef}>
-        <Link to='/' onClick={closeNavbar}>Home</Link>
-        <Link to='/features' onClick={closeNavbar}>Features</Link>
-        <Link to='/recipes' onClick={closeNavbar}>Recipes</Link>
-        <button className='nav-btn nav-close-btn' onClick={showNavbar}>
-          <CloseIcon />
-        </button>
-      </nav>
-      <button className='nav-btn' onClick={showNavbar}>
-        <ReorderIcon />
-      </button>
-    </header>
+export default function Navbar() {
+  const path = window.location.pathname;
+  return ( 
+  <nav className="nav">
+      <Link to="/" className="site-title"><img id="site_logo" src={ journalLogo } /></Link>
+      <ul>
+          <CustomLink to="/profile"><img id="profile_picture" src={ profilePicture } />Profile</CustomLink>
+          <CustomLink to="/recipes">Recipes</CustomLink>
+          <CustomLink to="/finder">Finder</CustomLink>
+          <CustomLink to="/ingredients">Ingredients</CustomLink>
+          <CustomLink to="/settings"><img id="settings_icon" src={ settingsIcon } /></CustomLink>
+      </ul>
+  </nav>
   )
 }
 
-export default Navbar;
+function CustomLink({ to, children, ...props }) {    
+  const resolvedPath = useResolvedPath(to);
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+  return (
+      <li className={isActive ? "active" : ""}>
+          <Link to={to} {...props}>
+              {children}
+          </Link>
+      </li>
+  )
+}
 
