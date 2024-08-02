@@ -6,7 +6,6 @@ import settingsIcon from "../assets/settings_icon.png";
 import profilePicture from "../assets/profile_picture.JPG";
 
 export default function Navbar() {
-  const path = window.location.pathname;
   return ( 
   <nav className="nav">
       <Link to="/" className="site-title"><img id="site_logo" src={ journalLogo } alt="Site_Logo"/></Link>
