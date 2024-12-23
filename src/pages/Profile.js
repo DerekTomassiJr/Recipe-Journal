@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/Dashboard.css'
+import '../styles/Profile.css'
 import pasta from '../assets/penne.jpg';
 import ramen from '../assets/ramen.jpg';
 import cheesecake from '../assets/cheesecake.jpg';

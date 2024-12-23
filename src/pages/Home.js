@@ -16,7 +16,7 @@ function Home() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (email === 'admin' && password === '123') {
-      navigate('/dashboard');
+      navigate('/profile');
     } else {
       setError('Invalid credentials');
     }
