@@ -47,7 +47,7 @@ body {
 
 .nav li.active {
     background-color: #FFF;
-    border-radius: 11px;
+    border-radius: 12px;
     color: #1663d1;
 }
 
