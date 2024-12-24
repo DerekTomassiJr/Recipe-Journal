@@ -1,9 +1,18 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css'
 import pasta from '../assets/penne.jpg';
 import ramen from '../assets/ramen.jpg';
 import cheesecake from '../assets/cheesecake.jpg';
+
+
 function Dashboard() {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = "/recipe";
+    navigate(path);
+  }
+
   return (
     <div>
     <div className='profile-header'></div>
@@ -42,7 +51,7 @@ function Dashboard() {
         <p>Italian | Pasta | Difficulty-Amateur</p>
         <p>A pasta dish made primarily with vodka and penne, usually accompanied by heavy cream.</p>
       </div>
-      <button className='view-recipe'>View Recipe</button>
+      <button className='view-recipe' onClick={routeChange}>View Recipe</button>
       <div className='stars'>⭐️⭐️⭐️⭐️⭐️</div>
     </div>
 

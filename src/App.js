@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import Recipe from './pages/Recipe';
 //added react router dom for routing different pages
 //Navbar included on every page
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -12,8 +13,9 @@ const App = () => {
     <Router>
     <Navbar/>
     <Routes>
-      <Route path='/' exact element = {<Home/>}/>
+      <Route path='*' exact element = {<Home/>}/>
       <Route path='/profile' exact element = {<Profile/>}/>
+      <Route path='/recipe' exact element = {<Recipe/>}/>
     </Routes>
     </Router>
     </div>
